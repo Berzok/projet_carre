@@ -3,6 +3,16 @@
     Created on : 12 mars 2019, 09:43:10
     Author     : prepain
 --%>
+<%
+
+    if (session.getAttribute("is_connected") == null) {
+        response.sendRedirect("index.jsp");
+        return;
+    } 
+
+%>
+
+
 <%@page import="java.io.*" %>
 <%@page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

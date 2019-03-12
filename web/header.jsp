@@ -19,8 +19,8 @@
                 <%
 
                 // If the user is not connected
-                //if (session.getAttribute("is_connected") != null || request.getParameter("is_connected") != null)
-                    out.print("<li><a class='button alert' href='logout.jsp'>Déconnexion</a></li>");
+                if (session.getAttribute("is_connected") != null)
+                    out.print("<li><a class='button alert' href='LogoutServlet'>Déconnexion</a></li>");
 
                 %>
 

@@ -18,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -52,26 +53,28 @@ public class LoginServlet extends HttpServlet {
             }catch(Exception e){out.print(e);}
 
             try{
+                // Connection to the database
                 String jdbc="jdbc:mysql://localhost:3306/g7";
                 String root="g7";
                 String mdp="g7";
                 conn=(Connection) DriverManager.getConnection(jdbc,root,mdp);
                 stmt=(Statement) conn.createStatement();
 
-
+                // preparing the request, to check if the password is correct
                 String sel="SELECT mdp from ACCOUNT WHERE LOGIN LIKE ?";
                 PreparedStatement st=(PreparedStatement) conn.prepareStatement(sel);
                 st.setString(1,login);
                 ResultSet res=st.executeQuery();
 
-
                 if (res.next() && res.getString("mdp").equals(password)) {
-                    request.setAttribute("is_connected", true);
-                    request.setAttribute("login", login);
+                    HttpSession session = request.getSession();
+
+                    session.setAttribute("is_connected", true);
+                    session.setAttribute("login", login);
                     response.sendRedirect("admin.jsp");
                     return;
                 }
-                else {
+                else {// password incorrect
                     response.sendRedirect("index.jsp");
                     return;
                 }
