@@ -43,6 +43,8 @@ public class LoginServlet extends HttpServlet {
             String login = request.getParameter("login");
             String password = request.getParameter("password");
             
+			System.out.println(login);
+			System.out.println(password);
             
             
 
@@ -71,7 +73,10 @@ public class LoginServlet extends HttpServlet {
 
                     session.setAttribute("is_connected", true);
                     session.setAttribute("login", login);
-                    response.sendRedirect("admin.jsp");
+					if(login.equals("admin"))
+						response.sendRedirect("admin.jsp");
+					else
+						response.sendRedirect("lejeu.jsp");
                     return;
                 }
                 else {// password incorrect

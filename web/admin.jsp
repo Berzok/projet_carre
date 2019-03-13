@@ -22,7 +22,7 @@
 
     <body>
         <%@include file="header.jsp" %>
-        <h1>Page adminstrateur</h1>
+        <h1>Page Administrateur</h1>
         
         <hr />
         

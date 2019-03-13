@@ -9,18 +9,46 @@ and open the template in the editor.
 */
 
 
+#jeu{
+	border: 2px solid black;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#new_game{
+	border: 1px solid #2ebed8;
+	padding: 15px 32px;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+	transition-duration: 0.3s;
+}
+
+#new_game:hover{
+	background-color: #2ebed8;
+}
+
 
 html{
-	background-color: #105993;
+	background-color: #FFFFFF;
 }
 
 #terrain{
 	height: 50%;
 	width: 50%;
-	border: 1px solid black;
+	border: 4px solid purple;
+	
+}
+
+#topbar:hover{
+	opacity: 0.95;
+	background-color: #b0daa2;
 }
 
 button{
+	border: 1px solid black;
 	padding: 15px 32px;
 	font-size: 16px;
+	background-color: #2ebed8;
+	border-radius: 8px;
 }
