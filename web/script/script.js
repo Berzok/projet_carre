@@ -1,14 +1,26 @@
 
 
 var carre;
+var id_partie;
+var tentatives = randomInt(5, 10);
+insertCoin(tentatives);
+
+
 
 function begin(canvasid, difficulty, notNew){
+	if(tentatives === 0){
+		window.alert("Vous n'avez plus de tentatives restantes !");
+		return;
+	}
+	tentatives -= 1;
+	insertCoin(tentatives);
 	if(notNew === '1'){
-		document.getElementById("jeu").removeChild(document.getElementById("lancer_dice"));
+		document.getElementById("button_area").removeChild(document.getElementById("lancer_dice"));
 	}
 	carre = new Square(canvasid, difficulty);
 	carre.draw_square();
 	carre.drawPlayer();
+	playedGames();
 }
 
 
@@ -67,12 +79,13 @@ function majButton(){
 	boutonLancer.setAttribute("onclick", "dice_gen()");
 	boutonLancer.setAttribute("id", "lancer_dice");
 	boutonLancer.appendChild(document.createTextNode("Lancer le dé"));
-	document.getElementById("jeu").appendChild(boutonLancer);
+	document.getElementById("button_area").appendChild(boutonLancer);
 }
 
 function dice_gen(){
-	switch(randomInt(1, 2)){
-		case 2:
+        var resultat = randomInt(1, 6);
+	switch(resultat%2){
+		case 0:
 			if((getIndex(carre.sommets, carre.getPlayer())%2 === 0) || (getIndex(carre.sommets, carre.getPlayer()) === 0)){
 				carre.player = carre.sommets[getIndex(carre.sommets, carre.getPlayer())+1];
 				break;
@@ -87,6 +100,21 @@ function dice_gen(){
 	carre.ctx.clearRect(0, 0, carre.canvas.width, carre.canvas.height);
 	carre.draw_square();
 	carre.drawPlayer();
+        if(carre.player.lettre === 'C'){
+            var boutonLancer = document.getElementById("lancer_dice");
+            boutonLancer.textContent = "Bravo !";
+            boutonLancer.setAttribute("onclick", "");
+            boutonLancer.style.backgroundColor = 'green';
+        }
+}
+
+
+function playedGames(id, nombre){
+}
+
+function insertCoin(tentatives){
+	var essais = document.getElementById("essais");
+	essais.innerHTML = tentatives + " parties restantes";
 }
 
 function randomInt(min, max){

@@ -25,26 +25,42 @@
         <title>JSP Page</title>
 		<link rel="shortcut icon" href="res/itembox.png">
 		<link rel="stylesheet"   href="css/style.css" />
-		<script src="script/script.js"></script>
     </head>
 	<%@include file="header.jsp" %>
     <body id="jeu">
 		
         <h1 style="border-bottom: 2px solid black">Bienvenue dans le jeu du carré!</h1>
 		
-		
-		
-		
-		<canvas id="terrain" style="background-color:#105993"></canvas>
+		<p id="essais"></p>
 		<br />
 		<br />
-		<!--
-			<select id="choix">
-				<option value="test1">Test 1</option>
-			</select>
-		-->
+	
+		<div id="area">
+			
+			
+			<div id="button_area">
+			
+				<button id="new_game" type="button" onclick="begin('terrain', '0', '0')">Nouvelle partie</button>
+				
+			</div>
+	
+			<canvas id="terrain" style="background-color:#105993"></canvas>
+			<!--
+				<select id="choix">
+					<option value="test1">Test 1</option>
+				</select>
+			-->
 		
-		<button id="new_game" type="button" onclick="begin('terrain', '0', '0')">Nouvelle partie</button>
+			<table id="scores">
+				<tr>
+					<th>N° partie</th>
+					<th>Nombre de coups</th>
+				</tr>
+			</table>
+			
+			
+		</div>
 		
     </body>
 </html>
+<script src="script/script.js"></script>
