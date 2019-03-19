@@ -5,16 +5,17 @@
 --%>
 
 <header>
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
+	<link rel="stylesheet"   href="css/style.css">
+    <div class="top-bar" id="topbar">
+        <div class="top-bar-left" id="topbar">
+            <ul class="dropdown menu" data-dropdown-menu id="topbar">
                 <li>
                     <img src="images/logo.png" alt="logo du site" />
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right">
-            <ul class="menu">
+        <div class="top-bar-right" id="topbar">
+            <ul class="menu" id="topbar">
 
                 <%
 

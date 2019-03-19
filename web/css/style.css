@@ -1,0 +1,117 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 févr. 2019, 09:19:19
+    Author     : ufriedri
+*/
+
+#jeu{
+	border: 2px solid black;
+	text-align: center;
+    background-color: #999999;
+    width: auto;
+	min-width: 100%;
+    height: auto;
+	min-height: 100%;
+	text-align: center;
+	
+}
+
+
+
+#area{
+	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#terrain{
+	position: relative;
+	text-align: center;
+	height: 100%;
+	width: auto;
+	border: 4px solid purple;
+	margin-left: 24px;
+	margin-right: 24px;
+	flex: 0 1 60%;
+}
+
+#scores{
+	border: 1px solid black;
+	height: 100%;
+	width: auto;
+	table-layout: fixed;
+	margin-right: 24px;
+	overflow: auto;
+	flex: 1 1 100%;
+	align-self: flex-start;
+}
+#scores th, #scores tr, #scores td{
+	border: 1px solid black;
+}
+
+
+
+#button_area{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	min-height: 100%;
+	width: 15%;
+}
+
+
+
+#new_game{
+	margin-top: 28px;
+	margin-bottom: 28px;
+	border: 1px solid black;
+	padding: 15px 32px;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+	transition-duration: 0.7s;
+	flex: 1 0 100%;
+}
+#new_game:hover{
+	background-color: #0099cc;
+}
+
+#lancer_dice{
+	border: 1px solid black;
+	padding: 15px 32px;
+	font-size: 16px;
+	background-color: #FFFFFF;
+	transition-duration: 0.3s;
+	border-radius: 8px;
+	flex: 0 0 auto;
+	margin-bottom: 24px;
+}
+#lancer_dice:hover{
+	background-color: #2ebed8;
+}
+
+html{
+    background-color: #999999;
+	height: 100%
+}
+
+
+#topbar:hover{
+	opacity: 0.95;
+	background-color: #b0daa2;
+}
+
+#essais{
+	border: 1px solid black;
+	text-align: center;
+	display: inline;
+	top: 50%;
+}
