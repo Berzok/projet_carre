@@ -20,13 +20,13 @@
 <html>
     <%@include file="head.jsp" %>
 
-    <body>
+    <body id="corpsadmin">
         <%@include file="header.jsp" %>
         <h1>Page Administrateur</h1>
         
         <hr />
         
-        <table style="width:20%;">
+        <table style="width:30%; text-align:center;margin : 0 auto;">
             <thead>
                 <tr>
                     <th>Nombre de coups</th>
@@ -85,7 +85,7 @@
             
         <hr />
             
-        <table style="width:20%;">
+        <table style="width:30%; text-align:center;margin : 0 auto;">
             <thead>
                 <th>Moyenne</th>
                 <th>Écart-type</th>
