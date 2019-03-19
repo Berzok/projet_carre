@@ -67,6 +67,9 @@ public class SaveData extends HttpServlet {
             String ins = "INSERT INTO GAME(nb_move, login_user, nb_game) VALUES('" + nb_moves + "', 'user', '" + id_game + "')";
 
             stmt.executeUpdate(ins);
+			response.sendRedirect("lejeu.jsp");
+			return;
+			
 
         }
     }
@@ -95,6 +98,8 @@ public class SaveData extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
+			response.sendRedirect("../../../lejeu.jsp");
+			return;
         } catch (SQLException ex) {
             Logger.getLogger(SaveData.class.getName()).log(Level.SEVERE, null, ex);
         }
